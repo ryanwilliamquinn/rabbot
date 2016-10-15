@@ -1,12 +1,12 @@
-pipeline:
-  build:
-    image: arobson/alpine-node:6.5
-    commands:
-      - npm install
-      - npm install mocha -g
-      - mocha spec/behavior
-      - mocha spec/integration
+build:
+  image: library/node
+  commands:
+    - npm install
+    - npm install mocha -g
+    - mocha spec/behavior
+    - mocha spec/integration
 
 services:
   rabbit:
-    image: arobson/rabbot
+      image: arobson/docker-rabbitmq
+
